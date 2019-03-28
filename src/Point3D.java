@@ -79,18 +79,15 @@ public class Point3D {
     }
 
     public void move(double dx, double dy, double dz) {
-        this._duble_x = dx;
-        this._duble_y = dy;
-        this._duble_z = dz;
+        this._duble_x += dx;
+        this._duble_y += dy;
+        this._duble_z += dz;
     }
 
     public double distance(Point3D p) {
         double px = p.getX();
         double py = p.getY();
         double pz = p.getZ();
-        return Math.sqrt((px - this._duble_x) * (px - this._duble_x) + (py - this._duble_y) * (py - this._duble_y) + (pz - this._duble_z) * (py - this._duble_z));
+        return  Math.sqrt(Math.pow(px - this._duble_x,2) + Math.pow(py - this._duble_y,2) + Math.pow(pz - this._duble_z,2));
     }
 }
-
-
-
